@@ -18,8 +18,9 @@
 		1D5ED34A1AD67B3B007F8BD5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5ED3491AD67B3B007F8BD5 /* Config.swift */; };
 		1D5ED34C1AD67B4D007F8BD5 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5ED34B1AD67B4D007F8BD5 /* Board.swift */; };
 		1D5ED34E1AD67B58007F8BD5 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5ED34D1AD67B58007F8BD5 /* Tile.swift */; };
-		1D5ED3501AD67F57007F8BD5 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5ED34F1AD67F57007F8BD5 /* Matrix.swift */; };
+		1D5ED3501AD67F57007F8BD5 /* Matrix2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5ED34F1AD67F57007F8BD5 /* Matrix2D.swift */; };
 		1D5ED3841AD6AE82007F8BD5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5ED3831AD6AE82007F8BD5 /* UIColor+Hex.swift */; };
+		1DFF6AA01AD718270083CE1D /* Matrix2D+Empties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFF6A9F1AD718270083CE1D /* Matrix2D+Empties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +49,9 @@
 		1D5ED3491AD67B3B007F8BD5 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		1D5ED34B1AD67B4D007F8BD5 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		1D5ED34D1AD67B58007F8BD5 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
-		1D5ED34F1AD67F57007F8BD5 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		1D5ED34F1AD67F57007F8BD5 /* Matrix2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix2D.swift; sourceTree = "<group>"; };
 		1D5ED3831AD6AE82007F8BD5 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		1DFF6A9F1AD718270083CE1D /* Matrix2D+Empties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Matrix2D+Empties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,14 +93,13 @@
 		1D5ED3221AD5E6A9007F8BD5 /* My2048 */ = {
 			isa = PBXGroup;
 			children = (
-				1D5ED3251AD5E6A9007F8BD5 /* AppDelegate.swift */,
 				1D5ED3291AD5E6A9007F8BD5 /* GameScene.swift */,
 				1D5ED34B1AD67B4D007F8BD5 /* Board.swift */,
 				1D5ED34D1AD67B58007F8BD5 /* Tile.swift */,
 				1D5ED3491AD67B3B007F8BD5 /* Config.swift */,
-				1D5ED34F1AD67F57007F8BD5 /* Matrix.swift */,
+				1DFF6AA11AD719EB0083CE1D /* Libraries */,
+				1D5ED3251AD5E6A9007F8BD5 /* AppDelegate.swift */,
 				1D5ED32B1AD5E6A9007F8BD5 /* GameViewController.swift */,
-				1D5ED3831AD6AE82007F8BD5 /* UIColor+Hex.swift */,
 				1D5ED3271AD5E6A9007F8BD5 /* GameScene.sks */,
 				1D5ED32D1AD5E6A9007F8BD5 /* Main.storyboard */,
 				1D5ED3301AD5E6A9007F8BD5 /* Images.xcassets */,
@@ -131,6 +132,16 @@
 				1D5ED33E1AD5E6A9007F8BD5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1DFF6AA11AD719EB0083CE1D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1D5ED34F1AD67F57007F8BD5 /* Matrix2D.swift */,
+				1DFF6A9F1AD718270083CE1D /* Matrix2D+Empties.swift */,
+				1D5ED3831AD6AE82007F8BD5 /* UIColor+Hex.swift */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,10 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D5ED3501AD67F57007F8BD5 /* Matrix.swift in Sources */,
+				1D5ED3501AD67F57007F8BD5 /* Matrix2D.swift in Sources */,
 				1D5ED3841AD6AE82007F8BD5 /* UIColor+Hex.swift in Sources */,
 				1D5ED32A1AD5E6A9007F8BD5 /* GameScene.swift in Sources */,
 				1D5ED34A1AD67B3B007F8BD5 /* Config.swift in Sources */,
+				1DFF6AA01AD718270083CE1D /* Matrix2D+Empties.swift in Sources */,
 				1D5ED34C1AD67B4D007F8BD5 /* Board.swift in Sources */,
 				1D5ED34E1AD67B58007F8BD5 /* Tile.swift in Sources */,
 				1D5ED32C1AD5E6A9007F8BD5 /* GameViewController.swift in Sources */,
@@ -439,6 +451,7 @@
 				1D5ED3451AD5E6A9007F8BD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D5ED3461AD5E6A9007F8BD5 /* Build configuration list for PBXNativeTarget "My2048Tests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +460,7 @@
 				1D5ED3481AD5E6A9007F8BD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

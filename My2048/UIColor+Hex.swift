@@ -1,6 +1,5 @@
 //
 //  UIColor+Hex.swift
-//  S04_Color
 //
 //  Created by Exey Panteleev on 30/03/15.
 //  Copyright (c) 2015 Exey Panteleev. All rights reserved.

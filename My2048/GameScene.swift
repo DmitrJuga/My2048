@@ -24,7 +24,7 @@ class GameScene: SKScene {
             
             for touch in (touches as! Set<UITouch>) {
                 let location = touch.locationInNode(self)
-                board.setRandomTile()
+                board.step()
                 //println("touchesBegan")
             }
             
