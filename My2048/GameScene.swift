@@ -10,27 +10,42 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-        let board = Board()
+    // Game UI
+    let board = Board()
+
+    override func didMoveToView(view: SKView) {
+        
+        let config = Config.defaultConfig
+        self.backgroundColor = UIColor(hex: config.BACKGROUNG_COLOR)
+        
+        // Board
+        board.position = CGPoint(x: CGRectGetMidX(frame) - CGRectGetMidX(board.frame),
+                                 y: CGRectGetMidY(frame) - CGRectGetMidY(board.frame))
+        addChild(board)
+        
+        // Listeners
+        addSwipeRecognizers(view)
+    }
+
     
-        override func didMoveToView(view: SKView) {
-            let config = Config.defaultConfig
-            self.backgroundColor = UIColor(hex: config.BACKGROUNG_COLOR)
-            board.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetMidY(frame))
-            addChild(board)
+    //** Добавляем распознование свайпов */
+    func addSwipeRecognizers(view: SKView) {
+
+        let dirs: [UISwipeGestureRecognizerDirection] = [.Up, .Down, .Right, .Left]
+        for d in dirs {
+            let r = UISwipeGestureRecognizer(target: self, action: "swipeHandler:")
+            r.direction = d
+            view.addGestureRecognizer(r)
         }
+    }
+
+    
+    //** Обработчик свайпов */
+    func swipeHandler(sender:UISwipeGestureRecognizer){
         
-        override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-            /* Called when a touch begins */
-            
-            for touch in (touches as! Set<UITouch>) {
-                let location = touch.locationInNode(self)
-                board.step()
-                //println("touchesBegan")
-            }
-            
-        }
-        
-        override func update(currentTime: CFTimeInterval) {
-            /* Called before each frame is rendered */
-        }
+        board.step(sender.direction)
+    }
+
+
+
 }

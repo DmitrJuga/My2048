@@ -19,6 +19,8 @@ struct Config {
     let GRID_SIZE = 4
     let TILE_SIZE: CGFloat = 64
     let TILE_GAP: CGFloat = 8
+    let TILE_RADIUS: CGFloat = 4
+    let CORNER_RADIUS: CGFloat = 4
     let TILE_FONT_NAME = "Arial Bold"
     var BOARD_SIZE: CGFloat {
         return CGFloat((TILE_SIZE + TILE_GAP) * CGFloat(GRID_SIZE) + TILE_GAP)

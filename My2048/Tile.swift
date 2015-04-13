@@ -8,6 +8,7 @@
 
 import SpriteKit
 
+// MARK: - TileState
 // Model / State Machine
 enum TileState {
     
@@ -21,10 +22,10 @@ enum TileState {
         newTR.notify()
     }
     
-    mutating func empty() {
+    mutating func clear() {
         let newTR = TileRelationship(tile: getNumberValue().tile, value: 0)
         self = .Number(newTR)
-        //newTR.notify()
+        newTR.notify()
     }
     
     func getNumberValue() -> TileRelationship {
@@ -35,6 +36,8 @@ enum TileState {
     }
 }
 
+
+// MARK: - TileRelationship
 // Helper
 struct TileRelationship {
     
@@ -46,15 +49,18 @@ struct TileRelationship {
     }
 }
 
+
+// MARK: - TileDelegate
 protocol TileDelegate {
     func updateLabel(value: Int)
 }
 
 
-
-class Tile: SKSpriteNode, TileDelegate {
+// MARK: - TILE
+class Tile: SKShapeNode, TileDelegate {
     
     var state: TileState!
+    let label = SKLabelNode(fontNamed: Config.defaultConfig.TILE_FONT_NAME)
 
     private let config = Config.defaultConfig
     
@@ -62,30 +68,36 @@ class Tile: SKSpriteNode, TileDelegate {
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
     
     /** Constructor */
-    init() {
-        let nodeColor = UIColor(hex: config.TILE_PARAMS[0]!.tileColor)
-        let nodeSize = CGSize(width: config.TILE_SIZE, height: config.TILE_SIZE)
-        super.init(texture: nil, color: nodeColor, size: nodeSize)
-
+    override init() {
+    
+        super.init()
+        
+        // настройка формы и размера
+        let halfSize = config.TILE_SIZE / 2
+        let nodeRect = CGRectMake(-halfSize, -halfSize, config.TILE_SIZE, config.TILE_SIZE);
+        self.path = CGPathCreateWithRoundedRect(nodeRect, config.CORNER_RADIUS, config.CORNER_RADIUS, nil)
+        self.addChild(label)
+        
         // init Model
         state = TileState.Number(TileRelationship(tile: self, value: 0))
         state.getNumberValue().notify()
     }
+
     
     /** апдейт значения ячейки */
     func updateLabel(value: Int) {
-        self.color = UIColor(hex: config.TILE_PARAMS[value]!.tileColor)
+
+        self.fillColor = UIColor(hex: config.TILE_PARAMS[value]!.tileColor)
+        self.strokeColor = self.fillColor
+
         if value != 0 {
-            let label = SKLabelNode()
             label.fontName = config.TILE_FONT_NAME
             label.fontSize = CGFloat(config.TILE_PARAMS[value]!.fontSize)
             label.fontColor = UIColor(hex: config.TILE_PARAMS[value]!.fontColor)
             label.text = String(value)
-            label.position = CGPoint(x: CGRectGetMidX(label.frame) * -1,
-                                     y: CGRectGetMidY(label.frame) * -1)
-            self.addChild(label)
+            label.position = CGPoint(x: 0, y: -label.frame.height / 2)
         } else {
-            //self.removeAllChildren()
+            label.text = ""
         }
     }
 
