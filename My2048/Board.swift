@@ -179,7 +179,7 @@ class Board: SKShapeNode {
                     
                     resCnt++
                     // и идём на следующую клетку (рекурсивно)
-                    resCnt += mergeTilesInLine(line, startAt: index - 1)
+                    resCnt += mergeTilesInLine(line, startAt: index - 2)
                     
             } else {
                 // иначе - идём рекурсивно на следующую клетку
