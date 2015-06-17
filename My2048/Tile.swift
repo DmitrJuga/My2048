@@ -40,8 +40,8 @@ enum TileState {
 // MARK: - TileRelationship
 // Helper
 struct TileRelationship {
-    
     let tile: TileDelegate // View
+
     let value: Int
     
     func notify() {
@@ -69,7 +69,6 @@ class Tile: SKShapeNode, TileDelegate {
     
     /** Constructor */
     override init() {
-    
         super.init()
         
         // настройка формы и размера
@@ -82,11 +81,9 @@ class Tile: SKShapeNode, TileDelegate {
         state = TileState.Number(TileRelationship(tile: self, value: 0))
         state.getNumberValue().notify()
     }
-
     
     /** апдейт значения ячейки */
     func updateLabel(value: Int) {
-
         self.fillColor = UIColor(hex: config.TILE_PARAMS[value]!.tileColor)
         self.strokeColor = self.fillColor
 

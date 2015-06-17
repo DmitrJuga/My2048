@@ -10,27 +10,21 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    // Game UI
     let board = Board()
 
     override func didMoveToView(view: SKView) {
-        
         let config = Config.defaultConfig
         self.backgroundColor = UIColor(hex: config.BACKGROUNG_COLOR)
         
-        // Board
         board.position = CGPoint(x: CGRectGetMidX(frame) - CGRectGetMidX(board.frame),
                                  y: CGRectGetMidY(frame) - CGRectGetMidY(board.frame))
         addChild(board)
-        
-        // Listeners
+
         addSwipeRecognizers(view)
     }
-
     
     //** Добавляем распознование свайпов */
     func addSwipeRecognizers(view: SKView) {
-
         let dirs: [UISwipeGestureRecognizerDirection] = [.Up, .Down, .Right, .Left]
         for d in dirs {
             let r = UISwipeGestureRecognizer(target: self, action: "swipeHandler:")
@@ -39,13 +33,9 @@ class GameScene: SKScene {
         }
     }
 
-    
     //** Обработчик свайпов */
     func swipeHandler(sender:UISwipeGestureRecognizer){
-        
         board.step(sender.direction)
     }
-
-
 
 }

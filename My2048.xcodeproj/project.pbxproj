@@ -98,12 +98,8 @@
 				1D5ED34D1AD67B58007F8BD5 /* Tile.swift */,
 				1D5ED3491AD67B3B007F8BD5 /* Config.swift */,
 				1DFF6AA11AD719EB0083CE1D /* Libraries */,
-				1D5ED3251AD5E6A9007F8BD5 /* AppDelegate.swift */,
 				1D5ED32B1AD5E6A9007F8BD5 /* GameViewController.swift */,
 				1D5ED3271AD5E6A9007F8BD5 /* GameScene.sks */,
-				1D5ED32D1AD5E6A9007F8BD5 /* Main.storyboard */,
-				1D5ED3301AD5E6A9007F8BD5 /* Images.xcassets */,
-				1D5ED3321AD5E6A9007F8BD5 /* LaunchScreen.xib */,
 				1D5ED3231AD5E6A9007F8BD5 /* Supporting Files */,
 			);
 			path = My2048;
@@ -112,6 +108,10 @@
 		1D5ED3231AD5E6A9007F8BD5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D5ED3251AD5E6A9007F8BD5 /* AppDelegate.swift */,
+				1D5ED3321AD5E6A9007F8BD5 /* LaunchScreen.xib */,
+				1D5ED32D1AD5E6A9007F8BD5 /* Main.storyboard */,
+				1D5ED3301AD5E6A9007F8BD5 /* Images.xcassets */,
 				1D5ED3241AD5E6A9007F8BD5 /* Info.plist */,
 			);
 			name = "Supporting Files";

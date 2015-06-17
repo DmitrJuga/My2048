@@ -23,7 +23,6 @@ class Board: SKShapeNode {
 
     /** Constructor */
     override init() {
-        
         super.init()
         
         // настройка формы, размера и цвета поля
@@ -46,10 +45,9 @@ class Board: SKShapeNode {
         setRandomTile()
     }
     
-    
+
     /** Создание нового тайла */
     func createTile(pos: M2DPosition) -> Tile {
-        
         let t = Tile()
         let offsetX = config.TILE_GAP + config.TILE_SIZE / 2
         let offsetY = config.BOARD_SIZE - config.TILE_SIZE / 2 - config.TILE_GAP
@@ -62,7 +60,6 @@ class Board: SKShapeNode {
     
     /** Возвращает случайную свободную позицию */
     func getRandomPosition() -> M2DPosition? {
-        
         let emptyCells = field.getEmpties{ ($0! as Tile).state.getNumberValue().value == 0 }
         if emptyCells.count > 0 {
             let randIndex = Int(arc4random_uniform(UInt32(emptyCells.count)))
@@ -75,7 +72,6 @@ class Board: SKShapeNode {
     
     /** Установка случайного свободного тайла в непустое значение */
     func setRandomTile() {
-        
         if let pos = getRandomPosition() {
             let tile = field[pos.col, pos.row]!
             tile.state.next()
@@ -87,7 +83,6 @@ class Board: SKShapeNode {
     
     /** Get Coords by Direction Order */
     func getCoordsByDirection(direction: UISwipeGestureRecognizerDirection, index: Int) -> [M2DPosition] {
-        
         let gridSize = config.GRID_SIZE
         var result = [M2DPosition](count: gridSize, repeatedValue: (-1, -1))
         
@@ -111,19 +106,15 @@ class Board: SKShapeNode {
     
     //** Сдвиг всех тайлов в линии */
     func moveTilesInLine(line: [M2DPosition], startAt index: Int = 0) -> Int {
-        
         var resCnt = 0
         
         // если это не последняя ячейка, иначе - выход из рекурсии
         if index < line.count - 1 {
-        
-            // если текущая клетка пустая - идём рекрсивно на следующую клетку
+            // если текущая клетка пустая - идём рекурсивно на следующую клетку
             let curTile = field[line[index].col, line[index].row]!
             if curTile.state.getNumberValue().value == 0 {
                 resCnt = moveTilesInLine(line, startAt: index + 1)
-                
             } else {
-
                 // если следующая клетка не пустая - попробуем сначала перемеcтить её (рекурсивно)
                 var nextTile = field[line[index + 1].col, line[index + 1].row]!
                 if nextTile.state.getNumberValue().value != 0 {
@@ -132,7 +123,6 @@ class Board: SKShapeNode {
                 // если следующая клетка (уже) пустая - переместим текущую
                 nextTile = field[line[index + 1].col, line[index + 1].row]!
                 if nextTile.state.getNumberValue().value == 0 {
-
                     let nextPosition = nextTile.position
                     nextTile.position = curTile.position
                     curTile.position = nextPosition
@@ -144,7 +134,6 @@ class Board: SKShapeNode {
                     resCnt += moveTilesInLine(line, startAt: index + 1)
                 }
             }
-            
         }
         return resCnt
     }
@@ -152,7 +141,6 @@ class Board: SKShapeNode {
    
     //** Сложение одинаковых тайлов в линии */
     func mergeTilesInLine(line: [M2DPosition], startAt ind: Int = -1) -> Int {
-        
         var resCnt = 0
         let index = ind == -1 ? line.count - 1 : ind // линию проходим в обратном порядке
         
@@ -164,7 +152,6 @@ class Board: SKShapeNode {
             let nextTile = field[line[index - 1].col, line[index - 1].row]!
             if curTile.state.getNumberValue().value != 0 &&
                 curTile.state.getNumberValue().value == nextTile.state.getNumberValue().value {
-                    
                     let nextPosition = nextTile.position
                     nextTile.position = curTile.position
                     curTile.position = nextPosition
@@ -192,7 +179,6 @@ class Board: SKShapeNode {
 
     //** STEP - шаг игры
     func step(direction: UISwipeGestureRecognizerDirection) {
-        
         var actCnt = 0
         for i in 0 ..< config.GRID_SIZE {
             let line = getCoordsByDirection(direction, index: i)
