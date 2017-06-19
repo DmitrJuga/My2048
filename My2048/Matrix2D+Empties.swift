@@ -9,8 +9,8 @@ import Foundation
 
 extension Matrix2D {
     
-    // Возвращает массив индексов (column, row) всех свободных позиций
-    func getEmpties(isEmpty: (T?) -> Bool) -> [(Int, Int)] {
+    // Returns an array of indices (column, row) of all free positions
+    func getEmpties(_ isEmpty: (T?) -> Bool) -> [(Int, Int)] {
         var arr = [(Int, Int)]()
         for col in 0 ..< rows {
             for row in 0 ..< columns {

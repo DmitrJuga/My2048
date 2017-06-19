@@ -12,7 +12,7 @@ struct Config {
     
     // Singleton
     static let defaultConfig = Config()
-    private init() {}
+    fileprivate init() {}
     
     let BACKGROUNG_COLOR = 0xFBF8EF
     let BOARD_COLOR = 0xBBADA0
@@ -21,7 +21,7 @@ struct Config {
     let TILE_GAP: CGFloat = 8
     let TILE_RADIUS: CGFloat = 4
     let CORNER_RADIUS: CGFloat = 4
-    let TILE_FONT_NAME = "Arial Bold"
+    let TILE_FONT_NAME = "ClearSans-Bold"
     var BOARD_SIZE: CGFloat {
         return CGFloat((TILE_SIZE + TILE_GAP) * CGFloat(GRID_SIZE) + TILE_GAP)
     }
