@@ -18,7 +18,7 @@ Simulated gameplay of the game 2048:
 - the sounds of the games corresponds to the sounds of the original game;
 - animation when tiles appear and when "tiling" the tiles.
 
-Restrictions: the account is not maintained, the achievement of the goal (2048) is not fixed.
+Restrictions: No score and the achievement of the goal (2048) is not fixed.
 
 ## Technical details
 
