@@ -12,29 +12,29 @@ class GameScene: SKScene {
     
     let board = Board()
 
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         let config = Config.defaultConfig
         self.backgroundColor = UIColor(hex: config.BACKGROUNG_COLOR)
         
-        board.position = CGPoint(x: CGRectGetMidX(frame) - CGRectGetMidX(board.frame),
-                                 y: CGRectGetMidY(frame) - CGRectGetMidY(board.frame))
+        board.position = CGPoint(x: frame.midX - board.frame.midX,
+                                 y: frame.midY - board.frame.midY)
         addChild(board)
 
         addSwipeRecognizers(view)
     }
     
-    //** Добавляем распознование свайпов */
-    func addSwipeRecognizers(view: SKView) {
-        let dirs: [UISwipeGestureRecognizerDirection] = [.Up, .Down, .Right, .Left]
+    // ** Add recognizing swipe * /
+    func addSwipeRecognizers(_ view: SKView) {
+        let dirs: [UISwipeGestureRecognizerDirection] = [.up, .down, .right, .left]
         for d in dirs {
-            let r = UISwipeGestureRecognizer(target: self, action: "swipeHandler:")
+            let r = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipeHandler(_:)))
             r.direction = d
             view.addGestureRecognizer(r)
         }
     }
 
-    //** Обработчик свайпов */
-    func swipeHandler(sender:UISwipeGestureRecognizer){
+    // ** The swipe handler * /
+    func swipeHandler(_ sender:UISwipeGestureRecognizer){
         board.step(sender.direction)
     }
 

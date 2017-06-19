@@ -11,12 +11,12 @@ import Foundation
 struct Matrix2D<T> {
     
     let columns: Int, rows: Int
-    private var grid: [T?]
+    fileprivate var grid: [T?]
     
     init(columns: Int, rows: Int) {
         self.columns = columns
         self.rows = rows
-        grid = [T?](count: columns * rows, repeatedValue: nil)
+        grid = [T?](repeating: nil, count: columns * rows)
     }
     
     func indexIsValid(column col: Int, row: Int) -> Bool {
