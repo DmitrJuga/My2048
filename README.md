@@ -2,8 +2,8 @@
 
 **"My 2048"** - 2048 Clone Built with **Swift** and **SpriteKit**.
 
-![](https://github.com/DmitrJuga/My2048/blob/master/screenshots/screenshot1.png)
-![](https://github.com/DmitrJuga/My2048/blob/master/screenshots/screenshot2.png)
+![](https://github.com/jamesjackson69/My2048/blob/English/screenshot1.png)
+![](https://github.com/jamesjackson69/My2048/blob/English/screenshot2.png)
 
 
 ## Functionality
