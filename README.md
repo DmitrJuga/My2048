@@ -1,9 +1,9 @@
-#! [] (Https://github.com/DmitrJuga/My2048/blob/master/My2048/Images.xcassets/AppIcon.appiconset/2048_app_icon-29@2x.png) My 2048
+# ![](https://github.com/DmitrJuga/My2048/blob/master/My2048/Images.xcassets/AppIcon.appiconset/2048_app_icon-29@2x.png)  My 2048
 
-** "My 2048" ** - a simple simulator of the game 2048. A learning task for ** Swift ** using the framework ** SpriteKit **.
+**"My 2048"** - простой симулятор игры 2048. Учебная задача на **Swift** с использованием фреймворка **SpriteKit**.
 
-! [] (Https://github.com/DmitrJuga/My2048/blob/master/screenshots/screenshot1.png)
-! [] (Https://github.com/DmitrJuga/My2048/blob/master/screenshots/screenshot2.png)
+![](https://github.com/DmitrJuga/My2048/blob/master/screenshots/screenshot1.png)
+![](https://github.com/DmitrJuga/My2048/blob/master/screenshots/screenshot2.png)
 
 
 ## Functionality
