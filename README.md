@@ -10,7 +10,7 @@
 
 Simulated gameplay of the game 2048:
 - the appearance of two random tiles ("2" or "4") at the beginning of the game;
-- Shifting tiles with svaypami in any direction;
+- Shifting tiles with swipe in any direction;
 - "addition" of identical tiles;
 - the appearance of a new tile ("2" or "4") in a random free cell after each move;
 - the colors of the tiles correspond to the value in them and repeat the original game;
