@@ -1,48 +1,29 @@
-# ![](https://github.com/DmitrJuga/My2048/blob/master/My2048/Images.xcassets/AppIcon.appiconset/2048_app_icon-29@2x.png)  My 2048
+#! [] (Https://github.com/DmitrJuga/My2048/blob/master/My2048/Images.xcassets/AppIcon.appiconset/2048_app_icon-29@2x.png) My 2048
 
-**"My 2048"** - простой симулятор игры 2048. Учебная задача на **Swift** с использованием фреймворка **SpriteKit**.
+** "My 2048" ** - a simple simulator of the game 2048. A learning task for ** Swift ** using the framework ** SpriteKit **.
 
-![](https://github.com/DmitrJuga/My2048/blob/master/screenshots/screenshot1.png)
-![](https://github.com/DmitrJuga/My2048/blob/master/screenshots/screenshot2.png)
-
-
-## Функционал
-
-Реализована симуляция игрового процесса игры 2048:   
-- появление двух случайных плиток ("2" или "4") в начале игры;
-- сдвиг плиток свайпами в любую сторону;
-- "сложение" одинаковых плиток;
-- появление новой плитки ("2" или "4") в случайной свободной ячейке после каждого хода;
-- цвета плиток соответствуют значению в них и повторяют оригинальную игру;
-- анимация при появлении плитки и при "сложении" плиток.
-
-Ограничения: счёт не ведётся, достижение цели (2048) не фиксируется.
-
-## Технические детали
-
-- Для отрисовки и анимации используется фреймворк **SpriteKit** (классы: `SKShapeNode` - поле, плитки, `SKLabelNode` - значения в плитках, `SKScene`, `SKView`).
-- Всё реализовано в коде, без интерфейс-билдера.
-- Реализация логики игры основана на паттерне State (в коде - enum `TileState`).
-- Обработчик `UISwipeGestureRecognizer` для сдвига тайлов.
-- В структуре `Config` задаются настройки - размеры и цвета всех элементов (в т.ч. для каждого значения в плитке).
-- Используются вспомогательные классы и расширения: `Matrix2D` - двумерный массив, `Matrix2D+Empties` - расширениe `Matrix2D` для поиска свободных позиций, `UIColor+Hex` - расширение `UIColor` для задания цвета 16-ричным числом.
-- App Icon (изображение из свободных web-источников).
+! [] (Https://github.com/DmitrJuga/My2048/blob/master/screenshots/screenshot1.png)
+! [] (Https://github.com/DmitrJuga/My2048/blob/master/screenshots/screenshot2.png)
 
 
-## Основа проекта
+## Functionality
 
-Проект создан на основе моей домашней работы к урокам 6, 7 по курсу **"Swift. Современные технологии программирования под Apple"** в НОЧУ ДО «Школа программирования» ([http://geekbrains.ru](http://geekbrains.ru/users/38648)) и доработан после окончания курса. Домашнее задание и пояснения к выполненой работе - см. в [homework_readme.md](https://github.com/DmitrJuga/My2048/blob/master/homework_readme.md).
+Simulated gameplay of the game 2048:
+- the appearance of two random tiles ("2" or "4") at the beginning of the game;
+- Shifting tiles with svaypami in any direction;
+- "addition" of identical tiles;
+- the appearance of a new tile ("2" or "4") in a random free cell after each move;
+- the colors of the tiles correspond to the value in them and repeat the original game;
+- animation when tiles appear and when "tiling" the tiles.
 
----
+Restrictions: the account is not maintained, the achievement of the goal (2048) is not fixed.
 
-### Contacts
+## Technical details
 
-**Дмитрий Долотенко / Dmitry Dolotenko**
-
-Krasnodar, Russia   
-Phone: +7 (918) 464-02-63   
-E-mail: <dmitrjuga@gmail.com>   
-Skype: d2imas
-
-:]
-
+- For rendering and animation, the ** SpriteKit ** framework is used (classes: `SKShapeNode` - field, tiles,` SKLabelNode` - values ​​in tiles, `SKScene`,` SKView`).
+- Everything is implemented in the code, without the interface-builder.
+- The implementation of the logic of the game is based on the State pattern (in the code - enum `TileState`).
+- The `UISwipeGestureRecognizer` handler for shifting tiles.
+- In the `Config` structure, the settings are set - the sizes and colors of all elements (including for each value in the tile).
+- Auxiliary classes and extensions are used: `Matrix2D` is a two-dimensional array,` Matrix2D + Empties` is a `Matrix2D` extension for finding free positions,` UIColor + Hex` is an extension of `UIColor` for coloring by a hexadecimal number.
+- App Icon (image from free web sources).
