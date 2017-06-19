@@ -14,13 +14,15 @@ Simulated gameplay of the game 2048:
 - "addition" of identical tiles;
 - the appearance of a new tile ("2" or "4") in a random free cell after each move;
 - the colors of the tiles correspond to the value in them and repeat the original game;
+- the font of the tiles corresponds to the font of the original game;
+- the sounds of the games corresponds to the sounds of the original game;
 - animation when tiles appear and when "tiling" the tiles.
 
 Restrictions: the account is not maintained, the achievement of the goal (2048) is not fixed.
 
 ## Technical details
 
-- For rendering and animation, the ** SpriteKit ** framework is used (classes: `SKShapeNode` - field, tiles,` SKLabelNode` - values ​​in tiles, `SKScene`,` SKView`).
+- For rendering and animation, the **SpriteKit** framework is used (classes: `SKShapeNode` - field, tiles,` SKLabelNode` - values ​​in tiles, `SKScene`,` SKView`).
 - Everything is implemented in the code, without the interface-builder.
 - The implementation of the logic of the game is based on the State pattern (in the code - enum `TileState`).
 - The `UISwipeGestureRecognizer` handler for shifting tiles.
